@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorra Energía - Encuesta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Ahorra Energía</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="equipos.html">Equipos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="mi-factura.html">Mi Factura</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="encuesta.html">Encuesta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registro.html">Registro</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h1 class="mb-4 text-primary">Encuesta de Hábitos de Consumo Energético</h1>
+        <p class="lead">Ayúdanos a evaluar el comportamiento y uso de energía en tu hogar completando el siguiente formulario.</p>
+
+        <!-- Formulario con método GET y mínimo 8 campos obligatorios -->
+        <form action="encuesta.html" method="get" class="card p-4 shadow-sm border-0 bg-light">
+            <fieldset class="mb-3">
+                <legend class="text-secondary fw-bold">Datos del Encuestado</legend>
+                
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre Completo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required placeholder="Ej. Edwin Montoya">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Correo Electrónico:</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="correo@ejemplo.com">
+                </div>
+
+                <div class="mb-3">
+                    <label for="personas" class="form-label">Número de habitantes en casa:</label>
+                    <input type="number" class="form-control" id="personas" name="personas" min="1" max="10" required>
+                </div>
+            </fieldset>
+
+            <fieldset class="mb-3">
+                <legend class="text-secondary fw-bold">Hábitos y Percepción</legend>
+
+                <div class="mb-3">
+                    <label for="temperatura" class="form-label">¿Cómo califica la temperatura actual en su zona?:</label>
+                    <select class="form-select" id="temperatura" name="temperatura" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="fresco">Fresco</option>
+                        <option value="caliente">Muy Caliente (Efecto El Niño)</option>
+                        <option value="templado">Templado</option>
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="conciencia" class="form-label">Nivel de conciencia sobre ahorro energético (1 al 10):</label>
+                    <input type="range" class="form-range" id="conciencia" name="conciencia" min="1" max="10" required>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">¿Apaga los electrodomésticos que no usa?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="apagar" id="apagarSi" value="si" required>
+                        <label class="form-check-label" for="apagarSi">Sí</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="apagar" id="apagarNo" value="no">
+                        <label class="form-check-label" for="apagarNo">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label d-block">Seleccione los electrodomésticos de mayor uso diario:</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="equipo" value="nevera" id="eq1">
+                        <label class="form-check-label" for="eq1">Nevera</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="equipo" value="freidora" id="eq2">
+                        <label class="form-check-label" for="eq2">Freidora de aire</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="equipo" value="computador" id="eq3">
+                        <label class="form-check-label" for="eq3">Computador / Laptop</label>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comentarios" class="form-label">Comentarios o sugerencias adicionales:</label>
+                    <textarea class="form-control" id="comentarios" name="comentarios" rows="3" placeholder="Escriba sus recomendaciones..."></textarea>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary w-100">Enviar Encuesta</button>
+        </form>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <div class="container">
+            <p class="mb-0">Desarrollado por Edwin Emilio Montoya Vasquez | Ingeniería Web 1</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
